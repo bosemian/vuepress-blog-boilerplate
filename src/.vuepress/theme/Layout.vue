@@ -57,6 +57,8 @@
       />
     </Page>
 
+    <Footer />
+
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
 </template>
@@ -70,6 +72,7 @@ import Page from './layout/Page.vue'
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
 import SWUpdatePopup from './components/SWUpdatePopup.vue'
+import Footer from './components/Footer.vue'
 import { resolveSidebarItems } from './util'
 
 export default {
@@ -79,7 +82,8 @@ export default {
     Page, 
     Sidebar, 
     Navbar, 
-    SWUpdatePopup 
+    SWUpdatePopup,
+    Footer
   },
 
   data () {

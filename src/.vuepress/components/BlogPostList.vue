@@ -97,15 +97,17 @@ export default {
         <ul class="blog-list">
             <li v-for="(item, index) in filteredList"
                 class="blog-list__item">
-                <BlogPostPreview 
-                    v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
-                    :item="item"
-                />
-                <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
-                    <li>
-                        <button @click="addTag(tag)">{{ tag }}</button>
-                    </li>
-                </ul>
+                <router-link :to="item" class="link">
+                    <BlogPostPreview 
+                        v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
+                        :item="item"
+                    />
+                    <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
+                        <li>
+                            <button @click="addTag(tag)">{{ tag }}</button>
+                        </li>
+                    </ul>
+                </router-link>
             </li>
         </ul>
 
@@ -128,14 +130,21 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" coped>
+@import '../theme/styles/variables.scss';
 .blog-list {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
 .blog-list__item {
-	list-style-type: none;
+    list-style-type: none;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .blog-list__tags {
@@ -155,10 +164,10 @@ export default {
 }
 
 .button--pagination:hover {
-    background-color: #fff;
-    border: 1px solid #32c8cf;
+    background-color: $white-color;
+    border: 1px solid $light-green-color;
     border-radius: 4px;
-    color: #32c8cf;
+    color: $light-green-color;
 }
 
 .clear-filter-btn {
@@ -172,5 +181,12 @@ export default {
 
 .pagination {
     text-align: center;
+}
+
+.link {
+    color: #2c3e50;
+    &:hover {
+        text-decoration: none !important;
+    }
 }
 </style>

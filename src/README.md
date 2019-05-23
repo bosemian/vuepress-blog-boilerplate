@@ -15,5 +15,5 @@ features:
 - 
     title: Feature 3
     details: Feature Details
-footer: This is a footer
 ---
+{{ $frontmatter.features }}
