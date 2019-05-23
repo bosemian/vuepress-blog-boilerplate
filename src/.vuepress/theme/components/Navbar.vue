@@ -88,7 +88,7 @@ function css (el, property) {
 <style lang="stylus">
 @import '../styles/config.styl'
 
-$navbar-vertical-padding = 0.7rem
+$navbar-vertical-padding = .6rem
 $navbar-horizontal-padding = 1.5rem
 
 .navbar
@@ -115,7 +115,7 @@ $navbar-horizontal-padding = 1.5rem
     font-size 0.9rem
     position absolute
     right $navbar-horizontal-padding
-    top $navbar-vertical-padding
+    top .7rem
     display flex
     .search-box
       flex: 0 0 auto
