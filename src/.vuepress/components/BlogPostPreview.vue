@@ -1,6 +1,9 @@
 <script>
 export default {
     name: 'BlogPostPreview',
+    created() {
+        console.log(this.item)
+    },
     props: {
         item: {
             type: Object,
@@ -30,8 +33,8 @@ export default {
 
 <template>
 	<article>
+        <div class="date"><time>{{ formatPublishDate }}</time></div>
         <div :style="{ backgroundImage: 'url(' + img + ')', backgroundRepeat: 'no-repeat' ,backgroundSize: 'cover', backgroundPosition: 'center top', height: '100%' }"></div>
-        <!-- <img src="../theme/assets/bg.jpg" alt=""> -->
         <div class="bottom-box">
             title
         </div>
@@ -49,11 +52,21 @@ article {
     position: relative;
     height: 200px;
     overflow: hidden;
-    img {
-        width: 100%;
-        height: auto;
-        max-height: 200px;
+
+    .date {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        background-color: red;
+        color: $white-color;
+        text-align: center;
+        time {
+            font-size: .7rem;
+            font-weight: bold;
+        }
     }
+    
     .bottom-box {
         position: absolute;
         background-color: rgba(0,0,0,0.4);
