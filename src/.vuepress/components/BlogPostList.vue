@@ -102,11 +102,11 @@ export default {
                         v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
                         :item="item"
                     />
-                    <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
+                    <!-- <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
                         <li>
                             <button @click="addTag(tag)">{{ tag }}</button>
                         </li>
-                    </ul>
+                    </ul> -->
                 </router-link>
             </li>
         </ul>
@@ -136,10 +136,17 @@ export default {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
 }
 
 .blog-list__item {
+    &:nth-child(odd) {
+        grid-column: 1 / 1;
+    }
+    &:nth-child(even) {
+        grid-column: 2 / 3;
+    }
     list-style-type: none;
 
     &:hover {

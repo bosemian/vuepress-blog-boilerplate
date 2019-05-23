@@ -18,21 +18,53 @@ export default {
 
             return dateFormat.toLocaleDateString('en-US', options)
         }
+    },
+
+    data () {
+        return {
+            img: require('../public/bg.jpg')
+        }
     }
 }
 </script>
 
 <template>
-	<section>
-        <time>{{ formatPublishDate }}</time>
+	<article>
+        <div :style="{ backgroundImage: 'url(' + img + ')', backgroundRepeat: 'no-repeat' ,backgroundSize: 'cover', backgroundPosition: 'center top', height: '100%' }"></div>
+        <!-- <img src="../theme/assets/bg.jpg" alt=""> -->
+        <div class="bottom-box">
+            title
+        </div>
+        <!-- <time>{{ formatPublishDate }}</time>
         <h3 class="blog-post__title">{{ item.frontmatter.title }}</h3>
         <p v-if="item.frontmatter.excerpt">{{ item.frontmatter.excerpt }}</p>
         <p v-if="item.readingTime">Estimated time: {{ item.readingTime.text }}</p>
-        <router-link class="button blog-post__button" :to="item.path">Read More ></router-link>
-    </section>
+        <router-link class="button blog-post__button" :to="item.path">Read More ></router-link> -->
+    </article>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../theme/styles/_variables.scss';
+article {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+    .bottom-box {
+        position: absolute;
+        background-color: rgba(0,0,0,0.4);
+        width: 100%;
+        height: 5rem;
+        color: $white-color;
+        bottom: 0;
+        overflow-wrap: break-word;
+        padding: .5rem 1rem;
+    }
+}
 .blog-post__button {
 	margin-bottom: 1.5rem;
 	display: inline-block;
