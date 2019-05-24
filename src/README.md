@@ -19,4 +19,16 @@ features:
     title: Feature 3
     details: Feature Details
     imageUrl: https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2614&q=80
+- 
+    title: Feature 4
+    details: Feature Details
+    imageUrl: https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2614&q=80
+- 
+    title: Feature 5
+    details: Feature Details
+    imageUrl: https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2614&q=80
+- 
+    title: Feature 6
+    details: Feature Details
+    imageUrl: https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2614&q=80
 ---

@@ -34,8 +34,9 @@
         :key="index"
       > 
         <img :src="feature.imageUrl">
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
+        <div class="title">
+          <h2>{{ feature.title }}</h2>
+        </div>
       </div>
     </div>
 
@@ -111,24 +112,26 @@ export default {
   .feature
     grid-column 1 / -1
     background #fff
-    border-radius 2px
+    border-radius 8px
     display inline-block
     position relative
-    box-shadow 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    border 1px solid #efefef
+    box-shadow 2px 4px 10px rgba(0,0,0,.025)
     transition all 0.3s cubic-bezier(.25,.8,.25,1)
     &:hover
       box-shadow 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     img
       width 100%
       height auto
-    h2
-      font-size 1.4rem
-      font-weight 500
-      border-bottom none
-      padding-bottom 0
-      color lighten($textColor, 10%)
-    p
-      color lighten($textColor, 25%)
+    .title
+      padding 1em
+      h2
+        font-size 2rem
+        font-weight 500
+        border-bottom none
+        padding-bottom 0
+        margin 0
+        color lighten($textColor, 10%)
   .footer
     padding 2.5rem
     border-top 1px solid $borderColor
@@ -136,10 +139,9 @@ export default {
     color lighten($textColor, 25%)
 
 @media (max-width: $MQMobile)
-  .news-wrapper
-    .news
-      width 33.33%
   .home
+    padding-left 1.2rem
+    padding-right 1.2rem
     .features
       flex-direction column
     .feature
