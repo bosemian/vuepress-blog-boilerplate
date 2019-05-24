@@ -71,7 +71,7 @@ export default {
 @import '../styles/theme.styl'
 
 .home
-  padding $navbarHeight 2rem 0
+  padding $navbarHeight 10rem
   max-width 960px
   margin 0px auto
   .hero
