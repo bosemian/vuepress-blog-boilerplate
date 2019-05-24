@@ -103,7 +103,6 @@ export default {
       &:hover
         background-color lighten($accentColor, 10%)
   .features
-    padding 1.2rem 0
     margin-top 2.5rem
     display grid
     grid-template-columns repeat(auto-fit, minmax(400px, 1fr))

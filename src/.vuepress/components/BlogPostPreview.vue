@@ -25,7 +25,7 @@ export default {
 
     data () {
         return {
-            img: require('../public/bg.jpg')
+            img: 'https://images.unsplash.com/photo-1529653762956-b0a27278529c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80'
         }
     }
 }
@@ -50,7 +50,7 @@ export default {
 @import '../theme/styles/_variables.scss';
 article {
     position: relative;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
 
     .date {

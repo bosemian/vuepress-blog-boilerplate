@@ -20,6 +20,6 @@ footer
     justify-content center
     align-items center
     text-transform uppercase
-    background-color #f9f9f9
+    background-color #FFF
     padding 3rem
 </style>
