@@ -36,7 +36,7 @@ export default {
         <div class="date"><time>{{ formatPublishDate }}</time></div>
         <div :style="{ backgroundImage: 'url(' + img + ')', backgroundRepeat: 'no-repeat' ,backgroundSize: 'cover', backgroundPosition: 'center top', height: '100%' }"></div>
         <div class="bottom-box">
-            title
+            {{ item.frontmatter.title }}
         </div>
         <!-- <time>{{ formatPublishDate }}</time>
         <h3 class="blog-post__title">{{ item.frontmatter.title }}</h3>
@@ -57,8 +57,8 @@ article {
         position: absolute;
         top: 0;
         left: 0;
-        width: 30%;
-        background-color: red;
+        width: 35%;
+        background-color: #e74c3c;
         color: $white-color;
         text-align: center;
         time {
@@ -118,5 +118,20 @@ article {
     padding: 5px;
     font-size: 0.9rem;
     background-color: #fff;
+}
+
+@media (max-width: 419px) {
+    article {
+        .date {
+            width: 42%;
+            padding: .5rem
+            time {
+                font-size: .5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 719px) {
 }
 </style>

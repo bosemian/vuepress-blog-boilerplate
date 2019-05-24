@@ -196,4 +196,26 @@ export default {
         text-decoration: none !important;
     }
 }
+
+@media (max-width: 419px) {
+    .blog-list__item {
+        &:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+        &:nth-child(even) {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+@media (max-width: 719px) {
+    .blog-list__item {
+        &:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+        &:nth-child(even) {
+            grid-column: 1 / -1;
+        }
+    }
+}
 </style>
