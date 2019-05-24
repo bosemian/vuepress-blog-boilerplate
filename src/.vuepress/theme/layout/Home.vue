@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="hero">
+    <!-- <div class="hero">
       <img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
@@ -22,9 +22,9 @@
           :item="actionLink"
         />
       </p>
-    </div>
+    </div> -->
 
-    <!-- <div
+    <div
       class="features"
       v-if="data.features && data.features.length"
     >
@@ -32,11 +32,12 @@
         class="feature"
         v-for="(feature, index) in data.features"
         :key="index"
-      >
+      > 
+        <img :src="feature.imageUrl">
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
-    </div> -->
+    </div>
 
     <Content custom/>
   </div>
@@ -47,7 +48,9 @@ import NavLink from '../components/NavLink.vue'
 
 export default {
   components: { NavLink },
-
+  created () {
+    console.log(this.$page.frontmatter.features)
+  },
   computed: {
     data () {
       return this.$page.frontmatter
@@ -65,6 +68,7 @@ export default {
 
 <style lang="stylus">
 @import '../styles/config.styl'
+@import '../styles/theme.styl'
 
 .home
   padding $navbarHeight 2rem 0
@@ -98,18 +102,25 @@ export default {
       &:hover
         background-color lighten($accentColor, 10%)
   .features
-    border-top 1px solid $borderColor
     padding 1.2rem 0
     margin-top 2.5rem
-    display flex
-    flex-wrap wrap
-    align-items flex-start
-    align-content stretch
-    justify-content space-between
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(400px, 1fr))
+    grid-gap 1em
+    overflow hidden
   .feature
-    flex-grow 1
-    flex-basis 30%
-    max-width 30%
+    grid-column 1 / -1
+    background #fff
+    border-radius 2px
+    display inline-block
+    position relative
+    box-shadow 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    transition all 0.3s cubic-bezier(.25,.8,.25,1)
+    &:hover
+      box-shadow 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    img
+      width 100%
+      height auto
     h2
       font-size 1.4rem
       font-weight 500
@@ -125,12 +136,14 @@ export default {
     color lighten($textColor, 25%)
 
 @media (max-width: $MQMobile)
+  .news-wrapper
+    .news
+      width 33.33%
   .home
     .features
       flex-direction column
     .feature
       max-width 100%
-      padding 0 2.5rem
 
 @media (max-width: $MQMobileNarrow)
   .home

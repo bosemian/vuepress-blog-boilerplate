@@ -13,11 +13,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.footer-wrapper
-  display flex
-  justify-content center
-  align-items center
-  text-transform uppercase
-  background-color #f9f9f9
-  padding 3rem
+footer
+  width 100%
+  .footer-wrapper
+    display flex
+    justify-content center
+    align-items center
+    text-transform uppercase
+    background-color #f9f9f9
+    padding 3rem
 </style>

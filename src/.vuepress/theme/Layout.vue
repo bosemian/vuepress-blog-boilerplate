@@ -57,7 +57,7 @@
       />
     </Page>
 
-    <Footer />
+    <!-- <Footer /> -->
 
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
