@@ -1,3 +1,4 @@
+const path = require('path')
 const currentDateUTC = new Date().toUTCString()
 
 module.exports = {
@@ -50,7 +51,7 @@ module.exports = {
 	configureWebpack: {
 		resolve: {
 			alias: {
-				'@alias': './public'
+				'@public': path.join(__dirname, './public')
 			}
 		}
 	}
